@@ -1,24 +1,20 @@
-# README
+# pixela client
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### development
 
-Things you may want to cover:
+1. clone this project
+1. install ruby and bundler if it is not installed
+1. bundle install
+1. create database
+1. run!
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+$ git clone git@github.com/ryosms/pixela_client
+$ cd pixela_client
+$ cat .ruby-version | rbenv install
+$ gem install bundler
+$ rbenv rehash
+$ bundle install --path vendor/bundle
+$ docker-compose up -d
+$ bin/rails s
+```
