@@ -16,5 +16,7 @@ $ gem install bundler
 $ rbenv rehash
 $ bundle install --path vendor/bundle
 $ docker-compose up -d
+$ bin/rails db:create
+$ bin/rails db:migrate
 $ bin/rails s
 ```
