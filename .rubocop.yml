@@ -1,0 +1,86 @@
+AllCops:
+  # 対象のRubyバージョン
+  TargetRubyVersion: 2.5
+
+# Rails用の設定を有効化
+Rails:
+  Enabled: true
+
+AllCops:
+  #対象外を指定
+  Exclude:
+    - bin/*
+    - config/**/*
+    - db/**/*
+    - log/*
+    - public/**/*
+    - pyxis/config/**/*
+    - script/**/*
+    - vendor/**/*
+
+# 日本語のコメントを許可
+Style/AsciiComments:
+  Enabled: false
+
+# クラスにコメントを残さない
+Documentation:
+  Enabled: false
+
+# メソッドの長さのチェック
+Metrics/MethodLength:
+  Enabled: false
+
+# ABCサイズチェック
+Metrics/AbcSize:
+  Enabled: true
+  Max: 20
+
+# メソッド引数の末尾のカンマ
+# https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/TrailingCommaInArguments
+Style/TrailingCommaInArguments:
+  Exclude:
+    - 'db/fixtures/*'
+
+# 1行の長さ
+Metrics/LineLength:
+  Max: 100
+
+# 矛盾したインデントをチェック
+# https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/IndentationConsistency
+Layout/IndentationConsistency:
+  EnforcedStyle: rails
+
+# 2行以上の空行を許さない
+# https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Layout/EmptyLines
+Layout/EmptyLines:
+  Enabled: false
+
+# module_functionが利用されているかチェック
+# https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/ModuleFunction
+Style/ModuleFunction:
+  Enabled: false
+
+# frozen_string_literal：trueが入っているかチェック
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# self. の冗長使用をチェック
+# https://www.rubydoc.info/gems/rubocop/RuboCop/Cop/Style/RedundantSelf
+Style/RedundantSelf:
+  Enabled: false
+
+# パーセントリテラルの囲み記号の指定
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': '()'
+    '%w': '()'
+    '%W': '()'
+
+# ActiveRecordのfind_each (デフォルトで1000件ずつ取得するやつ) を強制
+# 互換性に問題があるため無効化
+Rails/FindEach:
+  Enabled: false
+
+# 互換性に問題があるため無効化
+Style/NumericPredicate:
+  Enabled: false
