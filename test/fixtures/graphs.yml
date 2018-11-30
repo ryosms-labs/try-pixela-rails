@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  graph_id: MyText
+  graph_name: MyText
+  unit: MyText
+  type: MyText
+  color: MyText
+  user_id: 1
+
+two:
+  graph_id: MyText
+  graph_name: MyText
+  unit: MyText
+  type: MyText
+  color: MyText
+  user_id: 1

@@ -10,6 +10,7 @@
 #
 
 class User < ApplicationRecord
+  has_many :graphs
   validates :user_name, presence: true, uniqueness: { allow_blank: true }
   validates :token, presence: true
 
