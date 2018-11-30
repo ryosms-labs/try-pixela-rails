@@ -24,7 +24,9 @@ table.table
         td
           = graph.graph_name
         td
-          = graph.color
+          h4
+            .badge class="badge-#{graph_color_class(graph.color)}"
+              = graph.color
         td
           = link_to :Edit, edit_graph_path(graph), class: 'btn btn-info'
           = link_to :Delete, graph, method: :delete, class: 'btn btn-danger',
