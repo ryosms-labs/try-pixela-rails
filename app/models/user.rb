@@ -20,6 +20,8 @@ class User < ApplicationRecord
   end
 
   def decrypt_token
+    return '' if self.token.to_s.empty?
+
     token_encoder.decrypt_and_verify(self.token)
   end
 

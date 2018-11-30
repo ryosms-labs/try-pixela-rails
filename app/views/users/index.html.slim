@@ -1,0 +1,27 @@
+h1 Users List
+
+= search_form_for @search do |f|
+  .form-row.align-items-center
+    .col-auto
+      = f.label :Name, class: 'col-form-label col-sm-2'
+    .col-auto
+      = f.search_field :user_name_cont, class: 'form-control'
+    .col-auto
+      = f.button :submit, class: 'btn btn-primary'
+        = :Search
+
+= link_to 'Add New User', new_user_path, class: 'btn btn-success'
+table.table
+  thead
+    tr
+      td Name
+      td
+  tbody
+    - @users.each do |user|
+      tr
+        td
+          = link_to user.user_name, user, class: 'btn btn-link'
+        td
+          = link_to :Edit, edit_user_path(user), class: 'btn btn-info'
+          = link_to :Destroy, user, method: :delete, class: 'btn btn-danger',
+                  data: {confirm: '削除しますか？'}

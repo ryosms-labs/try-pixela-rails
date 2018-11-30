@@ -1,0 +1,5 @@
+= simple_form_for @user do |f|
+  = f.input :user_name
+  = f.input :token, as: :password, input_html: { value: @user.decrypt_token }
+  = f.input :show_token, as: :boolean, input_html: { checked: false }
+  = f.button :submit, class: 'btn btn-success'

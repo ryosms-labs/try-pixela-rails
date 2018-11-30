@@ -8,4 +8,10 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
-    = yield
+    .container
+      = link_to 'Pixela Client', root_path, class: 'btn btn-link'
+
+      - flash.each do |message_type, message|
+        .alert class="alert-#{message_type}"
+          = message
+      = yield
