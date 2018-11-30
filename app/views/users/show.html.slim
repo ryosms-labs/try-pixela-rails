@@ -7,3 +7,25 @@ h1
 
 h3 Graphs
 
+= link_to 'New Graph', new_graph_path(@user), class: 'btn btn-success'
+
+table.table
+  thead
+    tr
+      td id
+      td name
+      td color
+      td
+  tbody
+    - @user.graphs.each do |graph|
+      tr
+        td
+          = link_to graph.graph_id, graph, class: 'btn btn-link'
+        td
+          = graph.graph_name
+        td
+          = graph.color
+        td
+          = link_to :Edit, edit_graph_path(graph), class: 'btn btn-info'
+          = link_to :Delete, graph, method: :delete, class: 'btn btn-danger',
+                  data: { confirm: '削除しますか？' }

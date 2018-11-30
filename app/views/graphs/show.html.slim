@@ -1,0 +1,5 @@
+h1
+  = link_to @graph.user.user_name, @graph.user
+  = "' #{@graph.graph_name}"
+
+img src="https://pixe.la/v1/users/#{@graph.user.user_name}/graphs/#{@graph.graph_id}"  alt="#{@graph.graph_name}"

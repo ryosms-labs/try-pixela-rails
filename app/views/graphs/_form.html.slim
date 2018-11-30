@@ -1,0 +1,8 @@
+= simple_form_for @graph do |f|
+  = f.input :graph_id, as: :string
+  = f.input :graph_name, as: :string
+  = f.input :unit, as: :string
+  = f.input :graph_type, collection: Graph.graph_types.keys
+  = f.input :color, collection: Graph.colors.keys
+  = f.hidden_field :user_id
+  = f.button :submit, class: 'btn btn-success'

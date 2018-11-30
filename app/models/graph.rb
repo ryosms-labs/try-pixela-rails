@@ -18,4 +18,7 @@ class Graph < ApplicationRecord
 
   enum graph_type: %i(int float)
   enum color: %i(shibafu momiji sora ichou ajisai kuro)
+
+  validates :graph_id, uniqueness: { scope: %i(graph_id user_id) }
+  validates :graph_id, :graph_name, :unit, :graph_type, :color, :user_id, presence: true
 end
